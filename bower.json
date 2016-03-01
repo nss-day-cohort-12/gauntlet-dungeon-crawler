@@ -1,0 +1,15 @@
+{
+  "name": "gauntlet-dungeon-crawler",
+  "homepage": "https://github.com/nss-day-cohort-12/gauntlet-dungeon-crawler",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "gauntlet-dungeon-crawler",
+  "version": "1.0.0",
+  "description": "Time to use protypal inheritance to build a game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-12/gauntlet-dungeon-crawler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-12/gauntlet-dungeon-crawler/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-12/gauntlet-dungeon-crawler#readme",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "lodash.assign": "^4.0.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  }
+}
