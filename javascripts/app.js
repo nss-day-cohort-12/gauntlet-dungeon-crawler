@@ -27,13 +27,24 @@ $(document).ready(function() {
 
 
 var selectedPlayerProfession;
+var selectedPlayerWeapon;
 
 let professionSelectorEl = $("#profession-selector");
 professionSelectorEl.on("click", ".card__button", function(event){
-  console.log("player selected", event.target);
+  // console.log("player selected", event.target);
   selectedPlayerProfession = $(event.target)[0].innerHTML;
-  console.log("selectedPlayerProfession", selectedPlayerProfession);
+  // console.log("selectedPlayerProfession", selectedPlayerProfession);
 })
+
+let weaponSelectorEl = $("#weapon-selector");
+weaponSelectorEl.on("click", ".card__button", function(event){
+  console.log("weapon selected", event.target);
+  selectedPlayerWeapon = $(event.target)[0].innerHTML;
+  // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+
+})
+
+
 
 
   /*
@@ -49,8 +60,13 @@ professionSelectorEl.on("click", ".card__button", function(event){
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($("#player-name").val() !== "")&&(selectedPlayerProfession);
         break;
+      case "card--battleground":
+        moveAlong = ($("#player-name").val() !== "")&&(selectedPlayerProfession)&&(selectedPlayerWeapon);
+        if (moveAlong){
+          createCharacter();
+        }
     }
 
     if (moveAlong) {
@@ -68,4 +84,28 @@ professionSelectorEl.on("click", ".card__button", function(event){
     $("." + previousCard).show();
   });
 
+function createCharacter(){
+  let playerName = $("#player-name").val();
+  // console.log("playerName", playerName);
+  // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+  // console.log("selectedPlayerProfession", selectedPlayerProfession);
+  let characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
+  let characterWeapon = new Gauntlet.Armory[selectedPlayerWeapon]();
+    // console.log("characterProfession", characterProfession);
+    // console.log("characterWeapon", characterWeapon);
+
+  let character = new Gauntlet.Combatants.Human();
+  character.playerName= playerName;
+  character.setWeapon(characterWeapon);
+  character.class = characterProfession;
+  console.log("character", character);  
+}
+
+
+
+
 });
+
+
+
+
