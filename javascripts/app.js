@@ -26,23 +26,35 @@ $(document).ready(function() {
   $("#player-setup").show();
 
 
-var selectedPlayerProfession;
-var selectedPlayerWeapon;
+  var selectedPlayerProfession;
+  var selectedPlayerWeapon;
+  let magic;
 
-let professionSelectorEl = $("#profession-selector");
-professionSelectorEl.on("click", ".card__button", function(event){
-  // console.log("player selected", event.target);
-  selectedPlayerProfession = $(event.target)[0].innerHTML;
-  // console.log("selectedPlayerProfession", selectedPlayerProfession);
-})
+  let professionSelectorEl = $("#profession-selector");
+  professionSelectorEl.on("click", ".card__button", function(event){
+    magic = false;
+    // console.log("event.currentTarget", event.currentTarget);
+    selectedPlayerProfession = $(event.currentTarget).find('.btn__text').html();
+    // console.log("selectedPlayerProfession", selectedPlayerProfession);
+    if (selectedPlayerProfession === "Wizard" || selectedPlayerProfession === "Sorcerer" || selectedPlayerProfession === "Conjurer"){
+      magic = true;
+    }
 
-let weaponSelectorEl = $("#weapon-selector");
-weaponSelectorEl.on("click", ".card__button", function(event){
-  console.log("weapon selected", event.target);
-  selectedPlayerWeapon = $(event.target)[0].innerHTML;
-  // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+    if (magic){
+            $('#weapons').hide();
+            $('#spells').show();
+          } else {
+            $('#weapons').show();
+            $('#spells').hide();
+          }
+  })
 
-})
+  let weaponSelectorEl = $("#weapon-selector");
+  weaponSelectorEl.on("click", ".card__button", function(event){
+    console.log("weapon selected", event.currentTarget);
+    selectedPlayerWeapon = $(event.currentTarget).find('.btn__text').html();
+    console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+  })
 
 
 
@@ -84,22 +96,27 @@ weaponSelectorEl.on("click", ".card__button", function(event){
     $("." + previousCard).show();
   });
 
-function createCharacter(){
-  let playerName = $("#player-name").val();
-  // console.log("playerName", playerName);
-  // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
-  // console.log("selectedPlayerProfession", selectedPlayerProfession);
-  let characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
-  let characterWeapon = new Gauntlet.Armory[selectedPlayerWeapon]();
-    // console.log("characterProfession", characterProfession);
-    // console.log("characterWeapon", characterWeapon);
+  function createCharacter(){
+    let playerName = $("#player-name").val();
+    // console.log("playerName", playerName);
+    // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+    // console.log("selectedPlayerProfession", selectedPlayerProfession);
+    let characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
+    let characterWeapon;
+    if (magic){
+      characterWeapon = new Gauntlet.SpellBook[selectedPlayerWeapon]();
+    } else {
+      characterWeapon = new Gauntlet.Armory[selectedPlayerWeapon]();
+    }
+      // console.log("characterProfession", characterProfession);
+     console.log("characterWeapon", characterWeapon);
 
-  let character = new Gauntlet.Combatants.Human();
-  character.playerName= playerName;
-  character.setWeapon(characterWeapon);
-  character.class = characterProfession;
-  console.log("character", character);  
-}
+    let character = new Gauntlet.Combatants.Human();
+    character.playerName= playerName;
+    character.setWeapon(characterWeapon);
+    character.class = characterProfession;
+    console.log("character", character);  
+  }
 
 
 
