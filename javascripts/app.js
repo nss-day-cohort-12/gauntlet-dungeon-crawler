@@ -17,7 +17,7 @@
 //  */
 // var spell = new Gauntlet.SpellBook.Sphere();
 // console.log("spell: ", spell.toString());
-
+let character;
 
 $(document).ready(function() {
   /*
@@ -132,7 +132,7 @@ $(document).ready(function() {
       // console.log("characterProfession", characterProfession);
      console.log("characterWeapon", characterWeapon);
 
-    let character = new Gauntlet.Combatants.Human();
+    character = new Gauntlet.Combatants.Human();
     character.playerName= playerName;
     character.setWeapon(characterWeapon);
     character.class = characterProfession;
@@ -141,7 +141,11 @@ $(document).ready(function() {
     fight(character);  
   }
 
-
+$("#attackButton").click(function()
+{
+  attack(character);
+}
+  );
 
 
 
