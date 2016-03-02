@@ -25,7 +25,7 @@ Gauntlet.Combatants.Player = function(name) {
   this.evade = 90;
 
   this.toString = function() {
-    var outputMessage = `${this.playerName} a ${this.skinColor} ${this.species} ${this.class} with a health of ${this.health} used ${this.weapon.toString()}.`
+    var outputMessage = `${this.playerName} a ${this.skinColor} ${this.species} ${this.class.name} with a health of ${this.health} used ${this.weapon.toString()}`
   // console.log("outputMessage", outputMessage);
     return outputMessage;
   };
@@ -81,6 +81,7 @@ Gauntlet.Combatants.Monster = function() {
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
   this.evade = this.evade -10;
+  
 
   
   this.skinColors.push("green", "orange", "blue");
