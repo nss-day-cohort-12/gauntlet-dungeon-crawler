@@ -20,6 +20,15 @@ describe('when the gauntlet game is coded', function() {
 	it('should have a set weapon function', function() {
 		expect(Gauntlet.Combatants.Player.prototype.setWeapon).toBeDefined();
 	});
+
+	it('should have a SpellBook, Armory, GuildHall, and Combatants', function() {
+		expect(Gauntlet.SpellBook).toBeDefined();
+		expect(Gauntlet.Armory).toBeDefined();
+		expect(Gauntlet.GuildHall).toBeDefined();
+		expect(Gauntlet.Combatants).toBeDefined();
+
+	
+	});
 	//generate class function
 	it('should have a generate class function', function() {
 		expect(Gauntlet.Combatants.Player.prototype.generateClass).toBeDefined();
