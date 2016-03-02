@@ -11,6 +11,7 @@ var Weapon = function() {
   }
 };
 
+
 Gauntlet.Armory.Dagger = function() {
   this.name = "dagger";
   this.damage = 4;
@@ -68,5 +69,5 @@ Gauntlet.Armory.Scissors = function() {
 Gauntlet.Armory.Scissors.prototype = new Weapon();
 
 
-
+console.log("Gauntlet.Armory", Gauntlet.Armory);
 
