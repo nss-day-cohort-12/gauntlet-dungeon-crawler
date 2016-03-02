@@ -47,17 +47,32 @@ $(document).ready(function() {
             $('#weapons').show();
             $('#spells').hide();
           }
+    //add styling to selected profession
+    addBtnChosen(professionSelectorEl, $(event.currentTarget));
   })
 
   let weaponSelectorEl = $("#weapon-selector");
   weaponSelectorEl.on("click", ".card__button", function(event){
-    console.log("weapon selected", event.currentTarget);
+    // console.log("weapon selected", event.currentTarget);
     selectedPlayerWeapon = $(event.currentTarget).find('.btn__text').html();
     console.log("selectedPlayerWeapon", selectedPlayerWeapon);
+
+    //add styling to selected weapon
+    addBtnChosen(weaponSelectorEl, $(event.currentTarget));
   })
 
 
+  function addBtnChosen ($group, $btn) {
+    //get previously chosen card in group if it exist and remove the chosen class
+    let prevSelectedCard = $group.find('.btn--chosen');
 
+    if (prevSelectedCard) {
+      prevSelectedCard.removeClass('btn--chosen')
+    }
+
+    //add chosen class to anchor tag of btn passed into function
+    $btn.children('a').addClass('btn--chosen')
+  }
 
   /*
     When any button with card__link class is clicked,
