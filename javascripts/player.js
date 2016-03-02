@@ -1,3 +1,5 @@
+'use strict';
+
 /*
   TODO: Modularize this code with IIFE or Browserify
  */
@@ -83,6 +85,8 @@ Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
   constructor function.
  */
 Gauntlet.Combatants.Monster = function() {
+  let randomSkin;
+
   this.species = "Monster";
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
@@ -90,7 +94,10 @@ Gauntlet.Combatants.Monster = function() {
   
   this.skinColors.push("green", "orange", "blue");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
-  this.skinColor = this.skinColor
+  this.skinColor = this.skinColor[randomSkin];
+
+  this.allowedClasses = ["Wizard", "Ninja", "Assassin"];
+
 
 };
 
