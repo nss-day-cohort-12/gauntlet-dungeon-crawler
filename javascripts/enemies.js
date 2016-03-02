@@ -17,10 +17,13 @@ Gauntlet.Combatants.Orc = function() {
   };
 
   this.generateWeapon = function() {
+    // Get a random index from the allowed weapons array
     var random = Math.round(Math.random() * (this.allowedWeapons.length - 1));
 
+    // Get the string at the index
     var randomWeapon = this.allowedWeapons[random];
 
+    // Composes the corresponding weapon into the player object
     this.weapon = new Gauntlet.Armory[randomWeapon]();
     return this.weapon;
   };

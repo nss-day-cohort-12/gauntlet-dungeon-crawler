@@ -13,7 +13,6 @@ function fight(character){
 };
 
 function makeBattleground (character, enemy){
-	let BattlegroundEl = $("#battleground");
 	var player1html = `<h1>${character.playerName}</h1>` +
           `<div class="progress"> ` +
             `<div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health

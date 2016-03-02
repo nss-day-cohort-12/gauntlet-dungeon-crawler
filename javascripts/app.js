@@ -123,6 +123,7 @@ $(document).ready(function() {
     // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
     // console.log("selectedPlayerProfession", selectedPlayerProfession);
     let characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
+
     let characterWeapon;
     if (magic){
       characterWeapon = new Gauntlet.SpellBook[selectedPlayerWeapon]();
@@ -130,7 +131,7 @@ $(document).ready(function() {
       characterWeapon = new Gauntlet.Armory[selectedPlayerWeapon]();
     }
       // console.log("characterProfession", characterProfession);
-     console.log("characterWeapon", characterWeapon);
+     // console.log("characterWeapon", characterWeapon);
 
     character = new Gauntlet.Combatants.Human();
     character.playerName= playerName;
@@ -138,12 +139,14 @@ $(document).ready(function() {
     character.class = characterProfession;
     console.log("character", character);
 
+    //now that character is created, he is ready to fight
     fight(character);  
   }
 
+
+  //if attack button clicked, then run the attack function
   $("#attackButton").click(function() {
     attack(character);
     });
-
 
 });
