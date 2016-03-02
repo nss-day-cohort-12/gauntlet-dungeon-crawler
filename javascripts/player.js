@@ -22,7 +22,7 @@ Gauntlet.Combatants.Player = function(name) {
   this.skinColors = [this.skinColor];
   this.strength = 90;
   this.intelligence = 90;
-
+  this.evade = 90;
   this.toString = function() {
     var output = [this.playerName,
       ": a ",
@@ -70,7 +70,7 @@ Gauntlet.Combatants.Human = function() {
 
   this.species = "Human";
   this.intelligence = this.intelligence + 20;
-
+  this.evade = this.evade + 10;
   this.skinColors.push("brown", "red", "white", "disease");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
@@ -91,13 +91,14 @@ Gauntlet.Combatants.Monster = function() {
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+  this.evade = this.evade -10;
+
   
   this.skinColors.push("green", "orange", "blue");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColor[randomSkin];
 
   this.allowedClasses = ["Wizard", "Ninja", "Assassin"];
-
 
 };
 

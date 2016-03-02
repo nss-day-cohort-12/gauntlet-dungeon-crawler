@@ -103,3 +103,17 @@ body {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
 }
+
+
+/*
+  Added By Dungeon Crawler Team
+ */
+
+ .btn--chosen {
+  -webkit-box-shadow: inset 0px 0px 31px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 31px 4px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 31px 4px rgba(0,0,0,0.75);
+  color: #fff;
+  font-weight: 900;
+  border-color: #000;
+ }
