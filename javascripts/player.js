@@ -83,9 +83,15 @@ Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
   constructor function.
  */
 Gauntlet.Combatants.Monster = function() {
+  this.species = "Monster";
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
+  
+  this.skinColors.push("green", "orange", "blue");
+  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+  this.skinColor = this.skinColor
+
 };
 
 Gauntlet.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();
