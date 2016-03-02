@@ -136,7 +136,9 @@ $(document).ready(function() {
     character.playerName= playerName;
     character.setWeapon(characterWeapon);
     character.class = characterProfession;
-    console.log("character", character);  
+    console.log("character", character);
+
+    fight(character);  
   }
 
 
