@@ -23,22 +23,11 @@ Gauntlet.Combatants.Player = function(name) {
   this.strength = 90;
   this.intelligence = 90;
   this.evade = 90;
+
   this.toString = function() {
-    var output = [this.playerName,
-      ": a ",
-      this.skinColor,
-      " skinned ",
-      this.species,
-      " ",
-      this.class,
-      " with ",
-      this.health,
-      " health. ",
-      (this.class.magical) ? "Able to cast " : " Wielding a ",
-      this.weapon.toString(),
-      "!"
-    ].join("");
-    return output;
+    var outputMessage = `${this.playerName} a ${this.skinColor} ${this.species} ${this.class} with a health of ${this.health} used ${this.weapon}.`
+  // console.log("outputMessage", outputMessage);
+    return outputMessage;
   };
 };
 
