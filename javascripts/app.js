@@ -32,6 +32,7 @@ $(document).ready(function() {
 
   let professionSelectorEl = $("#profession-selector");
   professionSelectorEl.on("click", ".card__button", function(event){
+    event.preventDefault();
     magic = false;
     // console.log("event.currentTarget", event.currentTarget);
     selectedPlayerProfession = $(event.currentTarget).find('.btn__text').html();
@@ -40,19 +41,21 @@ $(document).ready(function() {
       magic = true;
     }
 
+    //if selected profession is magic type, show spells instead of normal weapons on weapon card
     if (magic){
-            $('#weapons').hide();
-            $('#spells').show();
-          } else {
-            $('#weapons').show();
-            $('#spells').hide();
-          }
+      $('#weapons').hide();
+      $('#spells').show();
+    } else {
+      $('#weapons').show();
+      $('#spells').hide();
+    }
     //add styling to selected profession
     addBtnChosen(professionSelectorEl, $(event.currentTarget));
   })
 
   let weaponSelectorEl = $("#weapon-selector");
   weaponSelectorEl.on("click", ".card__button", function(event){
+    event.preventDefault();
     // console.log("weapon selected", event.currentTarget);
     selectedPlayerWeapon = $(event.currentTarget).find('.btn__text').html();
     console.log("selectedPlayerWeapon", selectedPlayerWeapon);
@@ -84,12 +87,15 @@ $(document).ready(function() {
 
     switch (nextCard) {
       case "card--class":
+        //before moving to profession card, make sure player name is input
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
+        //before moving to weapon card, make sure player name and profession are chosen
         moveAlong = ($("#player-name").val() !== "")&&(selectedPlayerProfession);
         break;
       case "card--battleground":
+        //before moving to battleground card, make sure player name, profession, and weapon are chosen
         moveAlong = ($("#player-name").val() !== "")&&(selectedPlayerProfession)&&(selectedPlayerWeapon);
         if (moveAlong){
           createCharacter();
@@ -136,8 +142,5 @@ $(document).ready(function() {
 
 
 
+
 });
-
-
-
-

@@ -32,8 +32,9 @@ Gauntlet.SpellBook.Sphere = function() {
 };
 Gauntlet.SpellBook.Sphere.prototype = new Gauntlet.SpellBook.Spell();
 
-
-
+/*
+  An elemental bolt that can be cast by a magical class
+ */
 Gauntlet.SpellBook.Bolt = function() {
   this.name = "bolt";
   this.damage = Math.floor(Math.random() * 8 + 12);
@@ -43,7 +44,9 @@ Gauntlet.SpellBook.Bolt = function() {
 };
 Gauntlet.SpellBook.Bolt.prototype = new Gauntlet.SpellBook.Spell();
 
-
+/*
+  An elemental wand for use by a magical class
+ */
 Gauntlet.SpellBook.Wand = function() {
   this.name = "wand";
   this.damage = Math.floor(Math.random() * 6 + 18);
