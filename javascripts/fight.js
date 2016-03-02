@@ -56,13 +56,14 @@ function makeBattleground (character, enemy){
 
 function attack(character) {
 	// enemy.health -= character.weapon.damage + (character.strength/10);
-	if (character.evade >= (Math.floor(Math.random() * 100 + 30)))
+	
+	if (character.evade >= (Math.floor(Math.random() * 100 + 100)))
 		{
 			alert("ENEMY MISSED")
 		}
 	else {character.health -=  enemy.weapon.damage + (enemy.strength/10);}	
 
-	if (enemy.evade >=(Math.floor(Math.random() * 100 + 30))) 
+	if (enemy.evade >=(Math.floor(Math.random() * 100 + 100))) 
 		{	
 			alert("YOU MISSED")
 		}
@@ -76,34 +77,30 @@ function attack(character) {
 		else {enemy.health -= character.weapon.damage + (character.strength/10)};
 	};
 		console.log("intelligence", character.intelligence);
-	
-
-		
-
-	if (character.health <= 0){
-		alert("You were murdered");
-	}
-	if (enemy.health <= 0) {
-		alert("You straight up murdered a guy");
-	}
-	console.log("character.health", character.health);
-	console.log("enemy.health", enemy.health);
-
-
-
-  updateHealthBars(character.health, enemy.health);
-  $('#fightText').html(`${character.toString()}`);
-
-  if (character.health <= 0){
+	  updateHealthBars(character.health, enemy.health);
+	  
+	 if (character.health <= 0){
     alert("You were murdered");
     $("#attackButton").attr('disabled', 'disabled');
+    $('#fightText').html("Game Over");
     return;
   }
   if (enemy.health <= 0) {
     alert("You straight up murdered a guy");
     $("#attackButton").attr('disabled', 'disabled');
+    $('#fightText').html("Game Over");
     return;
   }
+	
+	console.log("character.health", character.health);
+	console.log("enemy.health", enemy.health);
+
+
+
+
+  $('#fightText').html(`${character.toString()}`);
+
+ 
 }
 
 
