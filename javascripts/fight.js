@@ -3,10 +3,12 @@ let enemy;
 
 function fight(character){
 	enemy = new Gauntlet.Combatants.Orc();
-	enemy.class = enemy.generateClass();
-	let enemyWeapon = new Gauntlet.Armory.Dagger();
-	enemy.setWeapon(enemyWeapon);	
+  //give enemy random class from allowed classes
+	enemy.generateClass();
+  //give enemy random weapon from allowed weapons
+	enemy.generateWeapon();	
 	console.log("enemy", enemy);
+
 	makeBattleground(character, enemy);
 };
 

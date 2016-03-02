@@ -141,12 +141,9 @@ $(document).ready(function() {
     fight(character);  
   }
 
-$("#attackButton").click(function()
-{
-  attack(character);
-}
-  );
-
+  $("#attackButton").click(function() {
+    attack(character);
+    });
 
 
 });
