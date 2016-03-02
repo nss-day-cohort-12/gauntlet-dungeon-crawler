@@ -57,7 +57,13 @@ function makeBattleground (character, enemy){
 function attack(character) {
 	
 	character.health -=  enemy.weapon.damage + (enemy.strength/10);
-	enemy.health -= character.weapon.damage + (character.strength/10);
+
+  //handle whether character is magic to use intelligence or use strength otherwise
+	if (character.class === "Wizard" || character.class === "Sorcerer" || character.class === "Conjurer") {
+		enemy.health -=character.weapon.damage +(character.intelligence/10)
+	}
+		else {enemy.health -= character.weapon.damage + (character.strength/10)};
+
 
   updateHealthBars(character.health, enemy.health);
   $('#fightText').html(`${character.toString()}`);
