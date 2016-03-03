@@ -160,7 +160,7 @@ Gauntlet.GuildHall.Stealth = function() {
   this.image = null;
 };
 
-Gauntlet.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
+Gauntlet.GuildHall.Stealth.prototype = new Gauntlet.GuildHall.PlayerClass();
 
 Gauntlet.GuildHall.Thief = function() {
   this.name = "Thief";
@@ -192,5 +192,4 @@ Gauntlet.GuildHall.Assassin = function() {
   this.image = `<img src="http://www.entertainmentbuddha.com/blog/wp-content/uploads/2012/08/406096_446585385362148_1142128945_n.jpg">`;  
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
-
 

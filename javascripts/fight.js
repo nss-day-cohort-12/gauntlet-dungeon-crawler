@@ -68,7 +68,7 @@ function makeBattleground (character, enemy){
 }
 
 function attack(character) {
-	// enemy.health -= character.weapon.damage + (character.strength/10);
+	// enemy.health -= character.weapon.damage;
 	
 	if (character.evade >= (Math.floor(Math.random() * 100 + 100))){
 	 alert("ENEMY MISSED")
@@ -87,21 +87,18 @@ function attack(character) {
     }
 	};
 
-	console.log("intelligence", character.intelligence);
   updateHealthBars(character.health, enemy.health);
 
 
 	if (character.health <= 0){
     alert("You were murdered");
-    $("#attackButton").attr('disabled', 'disabled');
-    $('#fightText').html("Game Over");
+    gameOver("The Enemy");
     return;
   }
   
   if (enemy.health <= 0) {
     alert("You straight up murdered a guy");
-    $("#attackButton").attr('disabled', 'disabled');
-    $('#fightText').html("Game Over");
+    gameOver(character.playerName);
     return;
   }
 	
@@ -109,6 +106,17 @@ function attack(character) {
 	console.log("enemy.health", enemy.health);
 
   $('#fightText').html(`${character.toString()}`); 
+}
+
+function gameOver(winnerName) {
+  //disable attack button
+  $("#attackButton").attr('disabled', 'disabled');
+  
+  //update fight text
+  $('#fightText').html(`<h2>Game Over<h2><h4>${winnerName} Won!</h4>`);
+
+  $('#playAgainButton').removeClass('hidden');
+
 }
 
 
