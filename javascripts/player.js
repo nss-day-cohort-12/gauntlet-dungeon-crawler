@@ -14,7 +14,7 @@ Gauntlet.Combatants.Player = function(name) {
   this.species = null;
   this.class = null;
   this.weapon = null;
-
+  this.image = null;
   this.playerName = name || "unknown adventurer";
   this.health = Math.floor(Math.random() * 40 + 50);
   this.limbs = ["head", "neck", "arm", "leg", "torso"];
@@ -31,6 +31,9 @@ Gauntlet.Combatants.Player = function(name) {
     return outputMessage;
   };
 };
+Gauntlet.Combatants.Player.prototype.setImage = function(newImage) {
+  this.image = newImage;
+}
 
 Gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
@@ -64,7 +67,6 @@ Gauntlet.Combatants.Human = function() {
   this.skinColors.push("brown", "red", "white", "disease");
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
-
   this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
 };
 Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();

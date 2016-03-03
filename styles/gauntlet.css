@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+
 }
 
 .field {
@@ -125,4 +126,22 @@ body {
 
  .bordered {
   border: 1px solid black;
+ }
+
+ .background {
+  background-image: url("http://www.freecreatives.com/wp-content/uploads/2015/03/random-wallpapers-brick-wall-background-wallpaper-32459.jpg");
+  background-repeat: none;
+  background-size: cover;
+
+ }
+
+ .battleground {
+/*  background-color: rgba(20,20,20, 0.2);*/
+  color: white;
+  text-shadow: 5px 5px 5px black;
+ }
+
+ img {
+  max-height: 300px;
+
  }

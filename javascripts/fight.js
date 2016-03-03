@@ -14,6 +14,7 @@ function fight(character){
 };
 
 function makeBattleground (character, enemy){
+
 	var player1html = `<h1>${character.playerName}</h1>
         <div class="progress"> 
           <div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health
@@ -37,8 +38,6 @@ function makeBattleground (character, enemy){
   $("#playerOutput").html(player1html); 
 	
 
-
-
 	var enemyHTML = `<h1>Evil the Cat</h1>
         <div class="progress"> 
           <div class="progress-bar" id="enemyHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${enemy.health}%;"> Health
@@ -55,6 +54,7 @@ function makeBattleground (character, enemy){
           <div>Evade: ${enemy.evade}    
           </div>
         </div>`;
+
 
   // console.log("enemyHTML");
 
