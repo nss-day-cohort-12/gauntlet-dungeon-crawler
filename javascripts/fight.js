@@ -16,6 +16,7 @@ function fight(character){
 function makeBattleground (character, enemy){
 
 	var player1html = `<h1>${character.playerName}</h1>
+		${character.class.image}
         <div class="progress"> 
           <div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health
               <span class="sr-only"></span>
@@ -39,6 +40,7 @@ function makeBattleground (character, enemy){
 	
 
 	var enemyHTML = `<h1>Evil the Cat</h1>
+		<img src= "https://i.ytimg.com/vi/vZ0SzJ0Bi2I/maxresdefault.jpg">
         <div class="progress"> 
           <div class="progress-bar" id="enemyHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${enemy.health}%;"> Health
               <span class="sr-only"></span>
@@ -65,7 +67,7 @@ function makeBattleground (character, enemy){
 function attack(character) {
 	// enemy.health -= character.weapon.damage + (character.strength/10);
 	
-	if (character.evade >= (Math.floor(Math.random() * 100 + 100))){
+	if (character.evade >= (Math.floor(Math.random() * 100 + 80))){
 	 alert("ENEMY MISSED")
 	} else {
     character.health -=  enemy.weapon.damage + (enemy.strength/10);
@@ -88,6 +90,7 @@ function attack(character) {
 
 	if (character.health <= 0){
     alert("You were murdered");
+
     $("#attackButton").attr('disabled', 'disabled');
     $('#fightText').html("Game Over");
     return;
@@ -97,6 +100,7 @@ function attack(character) {
     alert("You straight up murdered a guy");
     $("#attackButton").attr('disabled', 'disabled');
     $('#fightText').html("Game Over");
+    $("section:last").addClass("victoryScreen")
     return;
   }
 	

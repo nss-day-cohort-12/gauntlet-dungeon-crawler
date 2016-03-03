@@ -160,7 +160,7 @@ Gauntlet.GuildHall.Stealth = function() {
   this.image = null;
 };
 
-Gauntlet.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
+Gauntlet.GuildHall.Stealth.prototype = new Gauntlet.GuildHall.PlayerClass();
 
 Gauntlet.GuildHall.Thief = function() {
   this.name = "Thief";
@@ -168,7 +168,7 @@ Gauntlet.GuildHall.Thief = function() {
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
   this.evasionBonus = this.evasionBonus +30;
-  this.image = `<img src="http://vignette3.wikia.nocookie.net/gauntlet/images/3/3f/Warrior_NES.png/revision/latest?cb=20120202192857">`;  
+  this.image = `<img src="http://vignette1.wikia.nocookie.net/gauntlet/images/d/dd/Elf_NES.png/revision/latest?cb=20120202193413">`;  
 };
 Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Stealth();
 

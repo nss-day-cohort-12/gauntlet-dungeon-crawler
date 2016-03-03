@@ -139,9 +139,21 @@ body {
 /*  background-color: rgba(20,20,20, 0.2);*/
   color: white;
   text-shadow: 5px 5px 5px black;
+  background-image: url("http://3.bp.blogspot.com/-ntgY5VZzkp4/T8-aTXG_kzI/AAAAAAAAAHI/kuzWUHH0KDI/s1600/Level+one.jpg");
+  background-repeat: none;
+  background-size: cover;
  }
 
  img {
-  max-height: 300px;
+  max-width: 500px;
+  max-height: 250px;
+
+ }
+
+ .victoryScreen {
+  background-image: url("http://www.freehdimages.in/uploads/large/desktop-american-flag-with-eagle-pics.jpg");
+  background-repeat: none;
+  background-size: contain, center;
+
 
  }
