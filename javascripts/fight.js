@@ -90,6 +90,7 @@ function attack(character) {
 
 	if (character.health <= 0){
     alert("You were murdered");
+
     $("#attackButton").attr('disabled', 'disabled');
     $('#fightText').html("Game Over");
     return;
@@ -99,6 +100,7 @@ function attack(character) {
     alert("You straight up murdered a guy");
     $("#attackButton").attr('disabled', 'disabled');
     $('#fightText').html("Game Over");
+    $("section:last").addClass("victoryScreen")
     return;
   }
 	

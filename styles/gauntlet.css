@@ -149,3 +149,11 @@ body {
   max-height: 250px;
 
  }
+
+ .victoryScreen {
+  background-image: url("http://www.freehdimages.in/uploads/large/desktop-american-flag-with-eagle-pics.jpg");
+  background-repeat: none;
+  background-size: contain, center;
+
+
+ }
