@@ -14,7 +14,7 @@ Gauntlet.Combatants.Orc = function() {
     // Composes the corresponding player class into the player object
     this.class = new Gauntlet.GuildHall[randomClass]();
     return this.class;
-  };
+  },
 
   this.generateWeapon = function() {
     // Get a random index from the allowed weapons array
@@ -26,7 +26,7 @@ Gauntlet.Combatants.Orc = function() {
     // Composes the corresponding weapon into the player object
     this.weapon = new Gauntlet.Armory[randomWeapon]();
     return this.weapon;
-  };
+  }
 };
 
 Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
