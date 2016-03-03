@@ -193,4 +193,3 @@ Gauntlet.GuildHall.Assassin = function() {
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
 
-

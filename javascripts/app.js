@@ -118,13 +118,22 @@ $(document).ready(function() {
   });
 
   function createCharacter(){
+    let characterProfession;
+    let characterWeapon;
+    
     let playerName = $("#player-name").val();
     // console.log("playerName", playerName);
     // console.log("selectedPlayerWeapon", selectedPlayerWeapon);
     // console.log("selectedPlayerProfession", selectedPlayerProfession);
-    let characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
+    character = new Gauntlet.Combatants.Human();
 
-    let characterWeapon;
+    //set the player profession
+    if (selectedPlayerProfession === "Surprise") {
+      characterProfession = character.generateClass();
+    } else {
+      characterProfession = new Gauntlet.GuildHall[selectedPlayerProfession]();
+    }
+
     if (magic){
       characterWeapon = new Gauntlet.SpellBook[selectedPlayerWeapon]();
     } else {
@@ -133,7 +142,6 @@ $(document).ready(function() {
       // console.log("characterProfession", characterProfession);
      // console.log("characterWeapon", characterWeapon);
 
-    character = new Gauntlet.Combatants.Human();
     character.playerName= playerName;
     character.setWeapon(characterWeapon);
     character.class = characterProfession;
@@ -149,4 +157,17 @@ $(document).ready(function() {
     attack(character);
     });
 
+
+  //if play gain button is clicked, then go back to the class select
+  $("#playAgainButton").click(function() {
+    $('#battleground').hide();
+    $('#class-select').show();
+
+    $('#fightText').html(`Click the button below to fight!`);
+    $("#attackButton").attr('disabled', false);
+    $("#playAgainButton").addClass('hidden');
+
+    //remove victory background if present
+    $("section:last").removeClass("victoryScreen")
+    });
 });
