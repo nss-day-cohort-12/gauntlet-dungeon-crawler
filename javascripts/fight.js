@@ -13,7 +13,8 @@ function fight(character){
 function makeBattleground (character, enemy){
 	let BattlegroundEl = $("#battleground");
 	var player1html = `<h1>${character.playerName}</h1>` +
-          `<div class="progress"> ` +
+		` ${character.class.image} 
+          <div class="progress"> ` +
             `<div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health
                 <span class="sr-only"></span>
             </div>
@@ -30,11 +31,13 @@ function makeBattleground (character, enemy){
           </div>`;
           console.log("player1html");
      $("#playerOutput").html(player1html); 
+
 	
 
 
 
 	var enemyHTML = `<h1>Evil the Cat</h1>` +
+		`<img src="https://i.ytimg.com/vi/vZ0SzJ0Bi2I/maxresdefault.jpg">` +
           `<div class="progress"> ` +
             `<div class="progress-bar" id="enemyHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${enemy.health}%;"> Health
                 <span class="sr-only"></span>
