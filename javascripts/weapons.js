@@ -19,19 +19,19 @@ Gauntlet.Armory.Dagger = function() {
 };
 Gauntlet.Armory.Dagger.prototype = new Weapon();
 
-Gauntlet.Armory.BroadSword = function() {
+Gauntlet.Armory.Sword = function() {
   this.name = "broad sword";
   this.damage = 14;
   this.hands = 2;
 };
-Gauntlet.Armory.BroadSword.prototype = new Weapon();
+Gauntlet.Armory.Sword.prototype = new Weapon();
 
-Gauntlet.Armory.WarAxe = function() {
+Gauntlet.Armory.Axe = function() {
   this.name = "war axe";
   this.damage = 18;
   this.hands = 2;
 };
-Gauntlet.Armory.WarAxe.prototype = new Weapon();
+Gauntlet.Armory.Axe.prototype = new Weapon();
 
 Gauntlet.Armory.Chicken = function() {
   this.name = "chicken";
@@ -67,7 +67,3 @@ Gauntlet.Armory.Scissors = function() {
 };
 
 Gauntlet.Armory.Scissors.prototype = new Weapon();
-
-
-console.log("Gauntlet.Armory", Gauntlet.Armory);
-
