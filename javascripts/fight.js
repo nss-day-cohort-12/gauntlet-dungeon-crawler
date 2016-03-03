@@ -42,6 +42,7 @@ function makeBattleground (character, enemy){
 	
 
 	var enemyHTML = `<h1>Evil the Cat</h1>
+        <img src= "https://i.ytimg.com/vi/vZ0SzJ0Bi2I/maxresdefault.jpg">
         <div>Weapon: ${enemy.weapon.name}
         </div>
         <div class="progress"> 
@@ -70,7 +71,7 @@ function makeBattleground (character, enemy){
 function attack(character) {
 	// enemy.health -= character.weapon.damage;
 	
-	if (character.evade >= (Math.floor(Math.random() * 100 + 100))){
+	if (character.evade >= (Math.floor(Math.random() * 100 + 80))){
 	 alert("ENEMY MISSED")
 	} else {
     character.health -=  enemy.weapon.damage + (enemy.strength/10);
@@ -99,6 +100,7 @@ function attack(character) {
   if (enemy.health <= 0) {
     alert("You straight up murdered a guy");
     gameOver(character.playerName);
+    $("section:last").addClass("victoryScreen")
     return;
   }
 	
