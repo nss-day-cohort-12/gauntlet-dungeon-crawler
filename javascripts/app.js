@@ -166,5 +166,8 @@ $(document).ready(function() {
     $('#fightText').html(`Click the button below to fight!`);
     $("#attackButton").attr('disabled', false);
     $("#playAgainButton").addClass('hidden');
+
+    //remove victory background
+    $("section:last").removeClass("victoryScreen")
     });
 });

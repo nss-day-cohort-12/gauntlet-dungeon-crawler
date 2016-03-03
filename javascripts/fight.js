@@ -15,25 +15,21 @@ function fight(character){
 
 function makeBattleground (character, enemy){
 
-	var player1html = `<h1>${character.playerName}</h1>
+	var player1html = `<div><h1>${character.playerName}</h1>
         ${character.class.image}
-        <div>Weapon: ${character.weapon.name}
-        </div>
+        <div>Class: ${character.class.name}</div>
+        <div>Weapon: ${character.weapon.name}</div>
+
         <div class="progress"> 
           <div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health
               <span class="sr-only"></span>
           </div>
         </div>
      
-          <div>Strength: ${character.strength}   
-          </div>
-
-          <div>Intelligence: ${character.intelligence} 
-          </div>
-
-          <div>Evade: ${character.evade}    
-          </div>
-        </div>`;
+        <div>Strength: ${character.strength}</div>
+        <div>Intelligence: ${character.intelligence}</div>
+        <div>Evade: ${character.evade}</div>
+      </div>`;
 
   // console.log("player1html");
   
@@ -41,25 +37,22 @@ function makeBattleground (character, enemy){
   $("#playerOutput").html(player1html); 
 	
 
-	var enemyHTML = `<h1>Evil the Cat</h1>
+	var enemyHTML = `<div><h1>Evil the Cat</h1>
         <img src= "https://i.ytimg.com/vi/vZ0SzJ0Bi2I/maxresdefault.jpg">
+        <div>Class: ${enemy.class.name}</div>
         <div>Weapon: ${enemy.weapon.name}
         </div>
+
         <div class="progress"> 
           <div class="progress-bar" id="enemyHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${enemy.health}%;"> Health
               <span class="sr-only"></span>
           </div>
         </div>
      
-          <div>Strength: ${enemy.strength}   
-          </div>
-
-          <div>Intelligence: ${enemy.intelligence} 
-          </div>
-
-          <div>Evade: ${enemy.evade}    
-          </div>
-        </div>`;
+        <div>Strength: ${enemy.strength}</div>
+        <div>Intelligence: ${enemy.intelligence}</div>
+        <div>Evade: ${enemy.evade}</div>
+      </div>`;
 
 
   // console.log("enemyHTML");
