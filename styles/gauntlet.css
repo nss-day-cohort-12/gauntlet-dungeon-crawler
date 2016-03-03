@@ -139,9 +139,13 @@ body {
 /*  background-color: rgba(20,20,20, 0.2);*/
   color: white;
   text-shadow: 5px 5px 5px black;
+  background-image: url("http://3.bp.blogspot.com/-ntgY5VZzkp4/T8-aTXG_kzI/AAAAAAAAAHI/kuzWUHH0KDI/s1600/Level+one.jpg");
+  background-repeat: none;
+  background-size: cover;
  }
 
  img {
+  max-width: 500px;
   max-height: 300px;
 
  }
