@@ -63,6 +63,7 @@ function makeBattleground (character, enemy){
 
 function attack(character) {
 	// enemy.health -= character.weapon.damage;
+  // character.health -= enemey.weapon.damage;
 	
 	if (character.evade >= (Math.floor(Math.random() * 100 + 80))){
 	 alert("ENEMY MISSED")
@@ -97,8 +98,8 @@ function attack(character) {
     return;
   }
 	
-	console.log("character.health", character.health);
-	console.log("enemy.health", enemy.health);
+	// console.log("character.health", character.health);
+	// console.log("enemy.health", enemy.health);
 
   $('#fightText').html(`${character.toString()}`); 
 }
@@ -110,6 +111,7 @@ function gameOver(winnerName) {
   //update fight text
   $('#fightText').html(`<h2>Game Over<h2><h4>${winnerName} Won!</h4>`);
 
+  //show play again button
   $('#playAgainButton').removeClass('hidden');
 
 }

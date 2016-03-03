@@ -167,7 +167,7 @@ $(document).ready(function() {
     $("#attackButton").attr('disabled', false);
     $("#playAgainButton").addClass('hidden');
 
-    //remove victory background
+    //remove victory background if present
     $("section:last").removeClass("victoryScreen")
     });
 });
