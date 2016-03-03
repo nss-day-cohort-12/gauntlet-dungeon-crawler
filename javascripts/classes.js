@@ -14,7 +14,6 @@ Gauntlet.GuildHall.PlayerClass = function() {
   this.intelligenceBonus = 0;
   this.magical = false;
   this.evasionBonus = 0;
-
   this.toString = function() {
     return this.name;
   }
@@ -31,6 +30,7 @@ Gauntlet.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
   this.evasionBonus = 5;
+  this.image = null;
 };
 Gauntlet.GuildHall.Fighter.prototype = new Gauntlet.GuildHall.PlayerClass();
 
@@ -40,6 +40,8 @@ Gauntlet.GuildHall.Warrior = function() {
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
   this.evasionBonus= this.evasionBonus + 0;
+  this.image = `<img src= "http://vignette3.wikia.nocookie.net/gauntlet/images/3/3f/Warrior_NES.png/revision/latest?cb=20120202192857">`;
+
 };
 Gauntlet.GuildHall.Warrior.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -49,6 +51,8 @@ Gauntlet.GuildHall.Valkyrie = function() {
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
   this.evasionBonus= this.evasionBonus + 0;
+  this.image = `<img src= "http://vignette3.wikia.nocookie.net/gauntlet/images/3/3f/Warrior_NES.png/revision/latest?cb=20120202192857">`;
+
 };
 Gauntlet.GuildHall.Valkyrie.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -58,6 +62,8 @@ Gauntlet.GuildHall.Berserker = function() {
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 20;
   this.evasionBonus= this.evasionBonus + 0;
+  this.image = `<img src= "http://vignette3.wikia.nocookie.net/gauntlet/images/3/3f/Warrior_NES.png/revision/latest?cb=20120202192857">`;
+
 };
 Gauntlet.GuildHall.Berserker.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -67,6 +73,9 @@ Gauntlet.GuildHall.Monk = function() {
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 40;
   this.evasionBonus= this.evasionBonus + 0;
+this.image = `<img src= "http://1.bp.blogspot.com/-oxXi8zTCVTY/VmeohS69ZFI/AAAAAAAABQQ/feSUCw3I1r0/s1600/Screen%2BShot%2B2015-12-09%2Bat%2B1.01.34%2BPM.png">`;
+
+
 };
 Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -85,6 +94,8 @@ Gauntlet.GuildHall.Mage = function() {
   this.strengthBonus =  - 20;
   this.intelligenceBonus =   20;
   this.evasionBonus = 10;
+  this.image = null;
+
 };
 Gauntlet.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
 
@@ -95,6 +106,7 @@ Gauntlet.GuildHall.Shaman = function() {
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 20;
   this.evasionBonus= this.evasionBonus + 0;
+  this.image = `<img src="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s320x320/e15/12353372_530589097097726_1988786379_n.jpg">`;
 };
 Gauntlet.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
 
@@ -105,6 +117,8 @@ Gauntlet.GuildHall.Wizard = function() {
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
   this.evasionBonus= this.evasionBonus + 0;
+  this.image = `<img src="http://vignette3.wikia.nocookie.net/gauntlet/images/5/53/Wizard_NES.png/revision/latest?cb=20120202193256">`;
+  
 };
 Gauntlet.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
 
@@ -114,6 +128,7 @@ Gauntlet.GuildHall.Conjurer = function() {
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
   this.evasionBonus= this.evasionBonus + 0;
+this.image = `<img src="http://vignette3.wikia.nocookie.net/gauntlet/images/5/53/Wizard_NES.png/revision/latest?cb=20120202193256">`; 
 };
 Gauntlet.GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
 
@@ -124,6 +139,7 @@ Gauntlet.GuildHall.Sorcerer = function() {
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 30;
   this.evasionBonus= this.evasionBonus + 0;
+this.image = `<img src="http://vignette3.wikia.nocookie.net/gauntlet/images/5/53/Wizard_NES.png/revision/latest?cb=20120202193256">`;  
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 
@@ -141,6 +157,7 @@ Gauntlet.GuildHall.Stealth = function() {
   this.strengthBonus =  10;
   this.intelligenceBonus =  10;
   this.evasionBonus =  20;
+  this.image = null;
 };
 
 Gauntlet.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
@@ -151,6 +168,7 @@ Gauntlet.GuildHall.Thief = function() {
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
   this.evasionBonus = this.evasionBonus +30;
+  this.image = `<img src="http://vignette3.wikia.nocookie.net/gauntlet/images/3/3f/Warrior_NES.png/revision/latest?cb=20120202192857">`;  
 };
 Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Stealth();
 
@@ -160,6 +178,8 @@ Gauntlet.GuildHall.Ninja = function() {
   this.strengthBonus = this.strengthBonus + 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
   this.evasionBonus = this.evasionBonus +20;
+  this.image = `<img src="http://images.nintendolife.com/reviews/wiiu-eshop/ninja_gaiden_nes/large.jpg">`;
+
 };
 Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Stealth();
 
@@ -168,7 +188,8 @@ Gauntlet.GuildHall.Assassin = function() {
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus +10;
   this.intelligenceBonus = this.intelligenceBonus - 10;
-  this.evasionBonus = this.evasionBonus +30
+  this.evasionBonus = this.evasionBonus +30;
+  this.image = `<img src="http://www.entertainmentbuddha.com/blog/wp-content/uploads/2012/08/406096_446585385362148_1142128945_n.jpg">`;  
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
 
