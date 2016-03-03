@@ -16,6 +16,9 @@ function fight(character){
 function makeBattleground (character, enemy){
 
 	var player1html = `<h1>${character.playerName}</h1>
+        ${character.class.image}
+        <div>Weapon: ${character.weapon.name}
+        </div>
         <div class="progress"> 
           <div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${character.health}%;"> Health
               <span class="sr-only"></span>
@@ -39,6 +42,8 @@ function makeBattleground (character, enemy){
 	
 
 	var enemyHTML = `<h1>Evil the Cat</h1>
+        <div>Weapon: ${enemy.weapon.name}
+        </div>
         <div class="progress"> 
           <div class="progress-bar" id="enemyHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ${enemy.health}%;"> Health
               <span class="sr-only"></span>
